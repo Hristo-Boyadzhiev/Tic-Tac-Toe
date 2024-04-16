@@ -7,7 +7,7 @@ export function GameProvider({
 }) {
     const [squareValues, setSquareValues] = useState([null, null, null, null, null, null, null, null, null])
     const [currentValue, setCurrentValue] = useState(null)
-    const [winner, setWinner] = useState('')
+    const [winner, setWinner] = useState(null)
 
     function setSquareValuesState(index) {
         if (squareValues[index] === null) {

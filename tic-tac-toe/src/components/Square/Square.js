@@ -1,4 +1,4 @@
-import { useGameContext } from '../../Context/GameContext'
+import { useGameContext } from '../Context/GameContext'
 import styles from './Square.module.css'
 
 export function Square({
