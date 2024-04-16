@@ -5,12 +5,13 @@ import styles from './Board.module.css'
 import { useNavigate } from 'react-router-dom'
 
 export function Board(props) {
-    const { winner } = useGameContext()
+    const { winner, resetSquareValues } = useGameContext()
     const navigate = useNavigate()
 
     useEffect(() => {
         if (winner) {
             navigate('/winner')
+            resetSquareValues()
         }
     }, [winner])
 
