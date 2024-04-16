@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const GameContext = createContext();
 
@@ -31,6 +31,10 @@ export function GameProvider({
         }
     }
 
+    useEffect(()=>{
+        checkAndSetWinner()
+    }, [squareValues])
+
     function checkAndSetWinner() {
         if ((squareValues[0] === 'X' && squareValues[1] === 'X' && squareValues[2] === 'X') ||
             (squareValues[3] === 'X' && squareValues[4] === 'X' && squareValues[5] === 'X') ||
@@ -55,7 +59,8 @@ export function GameProvider({
 
     const gameContextValues = {
         setSquareValuesState,
-        squareValues
+        squareValues,
+        winner
     }
 
     return (
