@@ -6,11 +6,11 @@ export function Board(props) {
     const { winner } = useGameContext()
 
     return (
-        <>
+        <section className={styles.board}>
             {winner
-                ? <h1>Winner is {winner}</h1>
+                ? <h1 className={styles.winner}>Winner is {winner}</h1>
                 : (
-                    <section className={styles.board}>
+                    <>
                         <div className={styles.row}>
                             <Square index={0} />
                             <Square index={1} />
@@ -28,9 +28,9 @@ export function Board(props) {
                             <Square index={7} />
                             <Square index={8} />
                         </div>
-                    </section>
+                    </>
                 )
             }
-        </>
+        </section>
     )
 }

@@ -1,9 +1,14 @@
-.board {
+.board,
+.winner {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+}
+
+.winner {
+    font-size: 6em;
 }
 
 .row {
