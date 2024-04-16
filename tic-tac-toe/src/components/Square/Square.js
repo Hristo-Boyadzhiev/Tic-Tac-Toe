@@ -4,7 +4,7 @@ import styles from './Square.module.css'
 export function Square({
     index
 }) {
-    const {setSquareValuesState, currentValue} = useGameContext()
+    const {setSquareValuesState, squareValues} = useGameContext()
 
 
     const clickHandler = () => {
@@ -12,6 +12,6 @@ export function Square({
     }
 
     return (
-        <button className={styles.square} onClick={clickHandler}></button>
+        <button className={styles.square} onClick={clickHandler}>{squareValues[index]}</button>
     )
 }

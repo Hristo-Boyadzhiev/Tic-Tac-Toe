@@ -7,6 +7,7 @@ export function GameProvider({
 }) {
     const [squareValues, setSquareValues] = useState([null, null, null, null, null, null, null, null, null])
     const [currentValue, setCurrentValue] = useState(null)
+    const [winner, setWinner] = useState('')
 
     function setSquareValuesState(index) {
         if (squareValues[index] === null) {
@@ -30,11 +31,31 @@ export function GameProvider({
         }
     }
 
-    console.log(squareValues)
+    function checkAndSetWinner() {
+        if ((squareValues[0] === 'X' && squareValues[1] === 'X' && squareValues[2] === 'X') ||
+            (squareValues[3] === 'X' && squareValues[4] === 'X' && squareValues[5] === 'X') ||
+            (squareValues[6] === 'X' && squareValues[7] === 'X' && squareValues[8] === 'X') ||
+            (squareValues[0] === 'X' && squareValues[3] === 'X' && squareValues[6] === 'X') ||
+            (squareValues[1] === 'X' && squareValues[4] === 'X' && squareValues[7] === 'X') ||
+            (squareValues[2] === 'X' && squareValues[5] === 'X' && squareValues[8] === 'X') ||
+            (squareValues[0] === 'X' && squareValues[4] === 'X' && squareValues[8] === 'X') ||
+            (squareValues[2] === 'X' && squareValues[4] === 'X' && squareValues[6] === 'X')) {
+            setWinner('X')
+        } else if ((squareValues[0] === 'O' && squareValues[1] === 'O' && squareValues[2] === 'O') ||
+            (squareValues[3] === 'O' && squareValues[4] === 'O' && squareValues[5] === 'O') ||
+            (squareValues[6] === 'O' && squareValues[7] === 'O' && squareValues[8] === 'O') ||
+            (squareValues[0] === 'O' && squareValues[3] === 'O' && squareValues[6] === 'O') ||
+            (squareValues[1] === 'O' && squareValues[4] === 'O' && squareValues[7] === 'O') ||
+            (squareValues[2] === 'O' && squareValues[5] === 'O' && squareValues[8] === 'O') ||
+            (squareValues[0] === 'O' && squareValues[4] === 'O' && squareValues[8] === 'O') ||
+            (squareValues[2] === 'O' && squareValues[4] === 'O' && squareValues[6] === 'O')) {
+            setWinner('O')
+        }
+    }
 
     const gameContextValues = {
         setSquareValuesState,
-
+        squareValues
     }
 
     return (
