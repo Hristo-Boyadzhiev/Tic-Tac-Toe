@@ -11,22 +11,26 @@ export function GameProvider({
     function setSquareValuesState(index) {
         if (squareValues[index] === null) {
 
-            if (currentValue === null) {
-                setCurrentValue('X')
-                setSquareValues(squareValues => squareValues.map((value, i) => i === index ? value = 'X' : value))
-            }
+            switch (currentValue) {
+                case 'X':
+                    setCurrentValue('O')
+                    setSquareValues(squareValues => squareValues.map((value, i) => i === index ? value = 'O' : value))
+                    break;
 
-            if (currentValue === 'X') {
-                setCurrentValue('O')
-                setSquareValues(squareValues => squareValues.map((value, i) => i === index ? value = 'O' : value))
-            }
+                case 'O':
+                    setCurrentValue('X')
+                    setSquareValues(squareValues => squareValues.map((value, i) => i === index ? value = 'X' : value))
+                    break;
 
-            if (currentValue === 'O') {
-                setCurrentValue('X')
-                setSquareValues(squareValues => squareValues.map((value, i) => i === index ? value = 'X' : value))
+                default:
+                    setCurrentValue('X')
+                    setSquareValues(squareValues => squareValues.map((value, i) => i === index ? value = 'X' : value))
+                    break;
             }
         }
     }
+
+    console.log(squareValues)
 
     const gameContextValues = {
         setSquareValuesState,
