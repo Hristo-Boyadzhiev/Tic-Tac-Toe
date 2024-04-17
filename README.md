@@ -11,9 +11,9 @@ If someone attempts to access the "winner" page before the game has ended, it re
 
 ### Usage
 
-To run the gameL
+To run the game:
 
-Type in the terminal:
+Type in the terminal
 
 cd tic-tac-toe
 
