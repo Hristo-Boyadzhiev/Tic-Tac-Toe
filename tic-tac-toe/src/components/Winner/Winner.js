@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useGameContext } from '../Context/GameContext'
 import styles from './Winner.module.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export function Winner(props) {
     const { winner, setWinner } = useGameContext()

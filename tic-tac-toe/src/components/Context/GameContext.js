@@ -11,7 +11,6 @@ export function GameProvider({
 
     function setSquareValuesState(index) {
         if (squareValues[index] === null) {
-
             switch (currentValue) {
                 case 'X':
                     setCurrentValue('O')
@@ -30,6 +29,7 @@ export function GameProvider({
             }
         }
     }
+
 
     function resetSquareValues() {
         setSquareValues([null, null, null, null, null, null, null, null, null])
