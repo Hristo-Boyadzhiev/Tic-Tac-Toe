@@ -30,12 +30,6 @@ export function GameProvider({
         }
     }
 
-
-    function resetSquareValues() {
-        setSquareValues([null, null, null, null, null, null, null, null, null])
-        setCurrentValue(null)
-    }
-
     useEffect(() => {
         checkAndSetWinner()
     }, [squareValues])
@@ -64,6 +58,10 @@ export function GameProvider({
         }
     }
 
+    function resetSquareValues() {
+        setSquareValues([null, null, null, null, null, null, null, null, null])
+        setCurrentValue(null)
+    }
 
     const gameContextValues = {
         setSquareValuesState,
