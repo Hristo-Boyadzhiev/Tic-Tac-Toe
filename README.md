@@ -17,4 +17,6 @@ Type in the terminal
 
 cd tic-tac-toe
 
+cd tic-tac-toe
+
 npm start
