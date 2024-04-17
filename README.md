@@ -8,3 +8,13 @@ The game board consists of 9 squares arranged in 3 rows and 3 columns. Two playe
 
 
 If someone attempts to access the "winner" page before the game has ended, it restarts from the beginning.
+
+### Usage
+
+To run the gameL
+
+Type in the terminal:
+
+cd tic-tac-toe
+
+npm start
