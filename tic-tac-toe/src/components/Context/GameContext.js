@@ -31,12 +31,12 @@ export function GameProvider({
         }
     }
 
-    function resetSquareValues(){
+    function resetSquareValues() {
         setSquareValues([null, null, null, null, null, null, null, null, null])
         setCurrentValue(null)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         checkAndSetWinner()
     }, [squareValues])
 
@@ -59,10 +59,11 @@ export function GameProvider({
             (squareValues[0] === 'O' && squareValues[4] === 'O' && squareValues[8] === 'O') ||
             (squareValues[2] === 'O' && squareValues[4] === 'O' && squareValues[6] === 'O')) {
             setWinner('O')
+        } else if (!squareValues.includes(null)) {
+            setWinner('No winner')
         }
     }
 
-    console.log(squareValues)
 
     const gameContextValues = {
         setSquareValuesState,
