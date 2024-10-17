@@ -4,6 +4,7 @@
 
 - [Overview](#overview)
 - [Tech Stack](#tech-stack)
+- [License](#license)
 - [Installation and Usage](#installation-and-usage)
 
 ## Overview
